@@ -1,0 +1,12 @@
+Input Image Size  : 680x306
+Output Image Size : 512x512 
+Performance Metrics:
+    Execution Time: 349.89 seconds
+    GPU Model: NVIDIA GeForce GTX 1650 Ti
+    GPU Memory Usage Change: -0.28 MB
+    ------------------------------------------
+SSIM (Original vs Output): 0.9915 - Çok Yüksek Benzerlik
+Feature Similarity (Original vs Output): 0.9968 - Çok Yüksek Benzerlik
+Perceptual Loss (Original vs Output): 0.0002 - Çok Yüksek Benzerlik
+Content Loss (Original vs Output): 0.0208 - Yüksek Benzerlik
+Style Loss (Original vs Output): 0.0000 - Çok Yüksek Benzerlik

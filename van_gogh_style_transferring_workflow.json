@@ -1,0 +1,1248 @@
+{
+  "last_node_id": 58,
+  "last_link_id": 146,
+  "nodes": [
+    {
+      "id": 55,
+      "type": "workflow/Load and Upscale (Original)",
+      "pos": {
+        "0": -283,
+        "1": -2389
+      },
+      "size": {
+        "0": 340.20001220703125,
+        "1": 410
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            139
+          ],
+          "shape": 3
+        }
+      ],
+      "title": "Van Gogh Starry Night",
+      "properties": {
+        "Node name for S&R": "workflow/Load and Upscale (Original)"
+      },
+      "widgets_values": [
+        "vangogh.jpg",
+        "image",
+        "nearest-exact",
+        512,
+        512,
+        "disabled"
+      ]
+    },
+    {
+      "id": 35,
+      "type": "PerformanceMeasurementStartNode",
+      "pos": {
+        "0": 184,
+        "1": -2185
+      },
+      "size": {
+        "0": 430.8000183105469,
+        "1": 66
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "original_image",
+          "type": "IMAGE",
+          "link": 139
+        },
+        {
+          "name": "input_image",
+          "type": "IMAGE",
+          "link": 136
+        }
+      ],
+      "outputs": [
+        {
+          "name": "original_image",
+          "type": "IMAGE",
+          "links": [
+            108
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "input_image",
+          "type": "IMAGE",
+          "links": [
+            109,
+            113
+          ],
+          "slot_index": 1,
+          "shape": 3
+        },
+        {
+          "name": "performance_context",
+          "type": "PERFORMANCE_CONTEXT",
+          "links": [
+            111
+          ],
+          "slot_index": 2,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PerformanceMeasurementStartNode"
+      }
+    },
+    {
+      "id": 36,
+      "type": "PerformanceMeasurementEndNode",
+      "pos": {
+        "0": 1139.021484375,
+        "1": -2391.947998046875
+      },
+      "size": {
+        "0": 493.8000183105469,
+        "1": 86
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "original_image",
+          "type": "IMAGE",
+          "link": 108
+        },
+        {
+          "name": "input_image",
+          "type": "IMAGE",
+          "link": 109
+        },
+        {
+          "name": "output_image",
+          "type": "IMAGE",
+          "link": 146
+        },
+        {
+          "name": "performance_context",
+          "type": "PERFORMANCE_CONTEXT",
+          "link": 111
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output_image",
+          "type": "IMAGE",
+          "links": [
+            112
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "performance_metrics",
+          "type": "STRING",
+          "links": [
+            107
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PerformanceMeasurementEndNode"
+      }
+    },
+    {
+      "id": 33,
+      "type": "CannyEdgePreprocessor",
+      "pos": {
+        "0": 644,
+        "1": -2005
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 113
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            117
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CannyEdgePreprocessor"
+      },
+      "widgets_values": [
+        100,
+        200,
+        512
+      ]
+    },
+    {
+      "id": 52,
+      "type": "workflow/Load Checkpoints and CLIP Text Encode",
+      "pos": {
+        "0": -266.0732421875,
+        "1": -1398.685791015625
+      },
+      "size": {
+        "0": 582.7244262695312,
+        "1": 364.5306701660156
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            142
+          ],
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            145
+          ],
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            133
+          ],
+          "shape": 3
+        },
+        {
+          "name": "CLIPTextEncode CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            144
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "workflow/Load Checkpoints and CLIP Text Encode"
+      },
+      "widgets_values": [
+        "Van-Gogh-Style-lvngvncnt-v2.ckpt",
+        "Transform this image into the style of Vincent van Gogh's 'Starry Night', with a dominant deep blue night sky filled with swirling, luminous stars. Use vibrant yet predominantly darker colors, bold and expressive brushstrokes, and thick impasto technique. Incorporate intense, swirling patterns reminiscent of turbulent clouds or wind. Emphasize the post-impressionist style with emotional intensity, capturing the essence of Van Gogh's vision. Include elements like cypress trees or wheat fields if appropriate, rendered with strong, visible brushstrokes. Maintain the original composition while infusing it with the dramatic, moody atmosphere characteristic of Van Gogh's nocturnal scenes. ",
+        "Photorealistic, smooth surfaces, sharp details, digital art, 3D rendering, anime style, cartoon, precise lines, perfect symmetry, highly detailed, sharp focus, studio lighting, modern art styles, minimalism, hyperrealism, pop art, daytime scenes, bright and cheerful colors, soft pastels, gentle brushstrokes, clean edges, flat colors, realistic sky, clear weather, sunshine, high key lighting"
+      ]
+    },
+    {
+      "id": 56,
+      "type": "EmptyLatentImage",
+      "pos": {
+        "0": 541.4668579101562,
+        "1": -1587.427001953125
+      },
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            140
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ]
+    },
+    {
+      "id": 58,
+      "type": "VAEDecode",
+      "pos": {
+        "0": 730.4669189453125,
+        "1": -1267.427001953125
+      },
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 141
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 145
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            146
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 48,
+      "type": "workflow/Load and Apply ControlNet",
+      "pos": {
+        "0": 943.4669189453125,
+        "1": -1562.427001953125
+      },
+      "size": {
+        "0": 317.4000244140625,
+        "1": 102
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "conditioning",
+          "type": "CONDITIONING",
+          "link": 133
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 117
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            143
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "workflow/Load and Apply ControlNet"
+      },
+      "widgets_values": [
+        "controlnet11Models_canny.safetensors",
+        0.5
+      ]
+    },
+    {
+      "id": 57,
+      "type": "KSampler",
+      "pos": {
+        "0": 1368.466796875,
+        "1": -1506.427001953125
+      },
+      "size": {
+        "0": 315,
+        "1": 474
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 142
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 143
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 144
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 140
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            141
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        295999034666924,
+        "randomize",
+        30,
+        7,
+        "dpmpp_sde",
+        "karras",
+        0.9
+      ]
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": {
+        "0": 1792,
+        "1": -2409
+      },
+      "size": {
+        "0": 535.57275390625,
+        "1": 596.439697265625
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 112
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 38,
+      "type": "ShowText|pysssss",
+      "pos": {
+        "0": 1149.021484375,
+        "1": -2184.947998046875
+      },
+      "size": {
+        "0": 534.4231567382812,
+        "1": 228.92835998535156
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 107,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Performance Metrics:\n    Execution Time: 100.35 seconds\n    GPU Model: NVIDIA GeForce GTX 1650 Ti\n    GPU Memory Usage Change: 0.00 MB\n    ------------------------------------------\nSSIM (Original vs Output): 0.9908 - Çok Yüksek Benzerlik\nFeature Similarity (Original vs Output): 0.9985 - Çok Yüksek Benzerlik\nPerceptual Loss (Original vs Output): 0.0001 - Çok Yüksek Benzerlik\nContent Loss (Original vs Output): 0.0124 - Yüksek Benzerlik\nStyle Loss (Original vs Output): 0.0000 - Çok Yüksek Benzerlik\n"
+      ]
+    },
+    {
+      "id": 43,
+      "type": "workflow/Load and Upscale (Input)",
+      "pos": {
+        "0": -398,
+        "1": -2319
+      },
+      "size": {
+        "0": 432.57098388671875,
+        "1": 450.5284423828125
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            136
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "workflow/Load and Upscale (Input)"
+      },
+      "widgets_values": [
+        "manz_6.jpg",
+        "image",
+        "nearest-exact",
+        512,
+        512,
+        "disabled"
+      ]
+    }
+  ],
+  "links": [
+    [
+      107,
+      36,
+      1,
+      38,
+      0,
+      "STRING"
+    ],
+    [
+      108,
+      35,
+      0,
+      36,
+      0,
+      "IMAGE"
+    ],
+    [
+      109,
+      35,
+      1,
+      36,
+      1,
+      "IMAGE"
+    ],
+    [
+      111,
+      35,
+      2,
+      36,
+      3,
+      "PERFORMANCE_CONTEXT"
+    ],
+    [
+      112,
+      36,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      113,
+      35,
+      1,
+      33,
+      0,
+      "IMAGE"
+    ],
+    [
+      117,
+      33,
+      0,
+      48,
+      1,
+      "IMAGE"
+    ],
+    [
+      133,
+      52,
+      2,
+      48,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      136,
+      43,
+      1,
+      35,
+      1,
+      "IMAGE"
+    ],
+    [
+      139,
+      55,
+      1,
+      35,
+      0,
+      "IMAGE"
+    ],
+    [
+      140,
+      56,
+      0,
+      57,
+      3,
+      "LATENT"
+    ],
+    [
+      141,
+      57,
+      0,
+      58,
+      0,
+      "LATENT"
+    ],
+    [
+      142,
+      52,
+      0,
+      57,
+      0,
+      "MODEL"
+    ],
+    [
+      143,
+      48,
+      0,
+      57,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      144,
+      52,
+      3,
+      57,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      145,
+      52,
+      1,
+      58,
+      1,
+      "VAE"
+    ],
+    [
+      146,
+      58,
+      0,
+      36,
+      2,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Load Checkpoints and Text Prompt",
+      "bounding": [
+        -275,
+        -1474,
+        603,
+        449
+      ],
+      "color": "#88A",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Image Loading and Preprocessing",
+      "bounding": [
+        -408,
+        -2463,
+        1377,
+        605
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Main Processes",
+      "bounding": [
+        532,
+        -1661,
+        1162,
+        639
+      ],
+      "color": "#8A8",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "title": "Outputs and Performance",
+      "bounding": [
+        1129,
+        -2483,
+        1209,
+        680
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5131581182307082,
+      "offset": [
+        1011.4355059070845,
+        2538.312700527327
+      ]
+    },
+    "groupNodes": {
+      "Load and Upscale (Input)": {
+        "nodes": [
+          {
+            "id": -1,
+            "type": "LoadImage",
+            "pos": {
+              "0": 39,
+              "1": -1355
+            },
+            "size": {
+              "0": 387.97003173828125,
+              "1": 465.5097961425781
+            },
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [],
+                "slot_index": 0
+              },
+              {
+                "name": "MASK",
+                "type": "MASK",
+                "links": null
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "LoadImage"
+            },
+            "widgets_values": [
+              "paqint_7.png",
+              "image"
+            ],
+            "index": 0
+          },
+          {
+            "id": -1,
+            "type": "ImageScale",
+            "pos": {
+              "0": 418,
+              "1": -1141
+            },
+            "size": {
+              "0": 315,
+              "1": 130
+            },
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "image",
+                "type": "IMAGE",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [],
+                "slot_index": 0,
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ImageScale"
+            },
+            "widgets_values": [
+              "nearest-exact",
+              512,
+              512,
+              "disabled"
+            ],
+            "index": 1
+          }
+        ],
+        "links": [
+          [
+            0,
+            0,
+            1,
+            0,
+            41,
+            "IMAGE"
+          ]
+        ],
+        "external": [
+          [
+            1,
+            0,
+            "IMAGE"
+          ]
+        ]
+      },
+      "Load and Apply ControlNet": {
+        "nodes": [
+          {
+            "id": -1,
+            "type": "ControlNetLoader",
+            "pos": {
+              "0": 148,
+              "1": -898
+            },
+            "size": {
+              "0": 422,
+              "1": 58
+            },
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "name": "CONTROL_NET",
+                "type": "CONTROL_NET",
+                "links": [],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ControlNetLoader"
+            },
+            "widgets_values": [
+              "controlnet11Models_canny.safetensors"
+            ],
+            "index": 0
+          },
+          {
+            "id": -1,
+            "type": "ControlNetApply",
+            "pos": {
+              "0": 800,
+              "1": -910
+            },
+            "size": {
+              "0": 317.4000244140625,
+              "1": 98
+            },
+            "flags": {
+              "collapsed": false
+            },
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "conditioning",
+                "type": "CONDITIONING",
+                "link": null
+              },
+              {
+                "name": "control_net",
+                "type": "CONTROL_NET",
+                "link": null
+              },
+              {
+                "name": "image",
+                "type": "IMAGE",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ControlNetApply"
+            },
+            "widgets_values": [
+              0.5
+            ],
+            "index": 1
+          }
+        ],
+        "links": [
+          [
+            null,
+            0,
+            1,
+            0,
+            44,
+            "CONDITIONING"
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            42,
+            "CONTROL_NET"
+          ],
+          [
+            null,
+            0,
+            1,
+            2,
+            33,
+            "IMAGE"
+          ]
+        ],
+        "external": [
+          [
+            1,
+            0,
+            "CONDITIONING"
+          ]
+        ]
+      },
+      "Load Checkpoints and CLIP Text Encode": {
+        "nodes": [
+          {
+            "id": -1,
+            "type": "CheckpointLoaderSimple",
+            "pos": {
+              "0": -218,
+              "1": -535
+            },
+            "size": {
+              "0": 315,
+              "1": 98
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [],
+                "slot_index": 0
+              },
+              {
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [],
+                "slot_index": 1
+              },
+              {
+                "name": "VAE",
+                "type": "VAE",
+                "links": [],
+                "slot_index": 2
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CheckpointLoaderSimple"
+            },
+            "widgets_values": [
+              "Van-Gogh-Style-lvngvncnt-v2.ckpt"
+            ],
+            "index": 0
+          },
+          {
+            "id": -1,
+            "type": "CLIPTextEncode",
+            "pos": {
+              "0": 205,
+              "1": -669
+            },
+            "size": {
+              "0": 422.84503173828125,
+              "1": 164.31304931640625
+            },
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "clip",
+                "type": "CLIP",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPTextEncode"
+            },
+            "widgets_values": [
+              "Transform this image into the style of Vincent van Gogh's 'Starry Night', with a dominant deep blue night sky filled with swirling, luminous stars. Use vibrant yet predominantly darker colors, bold and expressive brushstrokes, and thick impasto technique. Incorporate intense, swirling patterns reminiscent of turbulent clouds or wind. Emphasize the post-impressionist style with emotional intensity, capturing the essence of Van Gogh's vision. Include elements like cypress trees or wheat fields if appropriate, rendered with strong, visible brushstrokes. Maintain the original composition while infusing it with the dramatic, moody atmosphere characteristic of Van Gogh's nocturnal scenes. "
+            ],
+            "color": "#232",
+            "bgcolor": "#353",
+            "index": 1
+          },
+          {
+            "id": -1,
+            "type": "CLIPTextEncode",
+            "pos": {
+              "0": 226,
+              "1": -322.9999694824219
+            },
+            "size": {
+              "0": 425.27801513671875,
+              "1": 180.6060791015625
+            },
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "clip",
+                "type": "CLIP",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "links": [],
+                "slot_index": 0
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "CLIPTextEncode"
+            },
+            "widgets_values": [
+              "Photorealistic, smooth surfaces, sharp details, digital art, 3D rendering, anime style, cartoon, precise lines, perfect symmetry, highly detailed, sharp focus, studio lighting, modern art styles, minimalism, hyperrealism, pop art, daytime scenes, bright and cheerful colors, soft pastels, gentle brushstrokes, clean edges, flat colors, realistic sky, clear weather, sunshine, high key lighting"
+            ],
+            "color": "#322",
+            "bgcolor": "#533",
+            "index": 2
+          }
+        ],
+        "links": [
+          [
+            0,
+            1,
+            1,
+            0,
+            14,
+            "CLIP"
+          ],
+          [
+            0,
+            1,
+            2,
+            0,
+            14,
+            "CLIP"
+          ]
+        ],
+        "external": [
+          [
+            0,
+            0,
+            "MODEL"
+          ],
+          [
+            0,
+            2,
+            "VAE"
+          ],
+          [
+            1,
+            0,
+            "CONDITIONING"
+          ],
+          [
+            2,
+            0,
+            "CONDITIONING"
+          ]
+        ]
+      },
+      "Load and Upscale (Original)": {
+        "nodes": [
+          {
+            "id": -1,
+            "type": "LoadImage",
+            "pos": {
+              "0": 769,
+              "1": -2645
+            },
+            "size": {
+              "0": 315,
+              "1": 314
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [],
+                "slot_index": 0,
+                "shape": 3
+              },
+              {
+                "name": "MASK",
+                "type": "MASK",
+                "links": null,
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "LoadImage"
+            },
+            "widgets_values": [
+              "vangogh.jpg",
+              "image"
+            ],
+            "index": 0
+          },
+          {
+            "id": -1,
+            "type": "ImageScale",
+            "pos": {
+              "0": 1209,
+              "1": -2560
+            },
+            "size": {
+              "0": 315,
+              "1": 130
+            },
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "image",
+                "type": "IMAGE",
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "links": [],
+                "slot_index": 0,
+                "shape": 3
+              }
+            ],
+            "properties": {
+              "Node name for S&R": "ImageScale"
+            },
+            "widgets_values": [
+              "nearest-exact",
+              512,
+              512,
+              "disabled"
+            ],
+            "index": 1
+          }
+        ],
+        "links": [
+          [
+            0,
+            0,
+            1,
+            0,
+            53,
+            "IMAGE"
+          ]
+        ],
+        "external": [
+          [
+            1,
+            0,
+            "IMAGE"
+          ]
+        ]
+      }
+    }
+  },
+  "version": 0.4
+}
