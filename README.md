@@ -1,5 +1,8 @@
 # ComfyUI Van Gogh Style Transfer Project
 
+![ComfyUI_Workflow](van_gogh_style_transferring_comfyui_worflow.png)
+
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Project Overview](#project-overview)
