@@ -236,16 +236,6 @@ For further details on the implementation and usage of these custom nodes, inclu
 
 ## Experimental Studies
 
-### PyQt5 Desktop Application
-
-An experimental desktop application was developed using PyQt5 to provide a user-friendly interface for the ComfyUI workflow. The application aims to:
-
-- Launch a ComfyUI server in the background
-- Present a simplified interface for end-users
-- Handle all ComfyUI operations seamlessly
-
-The development of this application progressed significantly but was not fully completed before the project conclusion. All relevant documentation and code for this experimental study can be found in the `experimental_studies/` directory.
-
 ### Enhanced Resolution and Detail Pipeline
 A new experimental pipeline was implemented to improve output quality and resolution:
 
@@ -279,6 +269,16 @@ Performance Impact:
 The most notable drawback of this enhanced pipeline is the substantial increase in processing time. In some cases, the total execution time can more than double compared to the standard pipeline. This trade-off between quality and speed should be carefully considered based on the specific use case and available computational resources.
 
 Further experimentation and optimization of this pipeline are ongoing to maximize its potential within the project's computational constraints and to potentially mitigate the processing time increase.
+
+### PyQt5 Desktop Application
+
+An experimental desktop application was developed using PyQt5 to provide a user-friendly interface for the ComfyUI workflow. The application aims to:
+
+- Launch a ComfyUI server in the background
+- Present a simplified interface for end-users
+- Handle all ComfyUI operations seamlessly
+
+The development of this application progressed significantly but was not fully completed before the project conclusion. All relevant documentation and code for this experimental study can be found in the `experimental_studies/` directory.
 
 ## Conclusion
 
