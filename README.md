@@ -121,7 +121,7 @@ This project incorporates a variety of custom components to enhance functionalit
    
    These custom nodes, developed specifically for this project, enable precise performance tracking and analysis. They are located in the custom_nodes directory and are essential for optimizing workflow efficiency. For detailed information on their functionality and implementation, please refer to the Performance Measurement section.
 
-   ![ComfyUI_Workflow](custom_nodes.jpg)
+   ![Custom_Nodes](custom_nodes.png)
 
 ### Custom Modules
 
