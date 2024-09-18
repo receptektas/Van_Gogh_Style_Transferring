@@ -1,3 +1,32 @@
+# Enhanced Resolution and Detail Pipeline for Van Gogh Style Transfer
+
+![ComfyUI_Workflow](experimentals_worflow.png)
+
+## Overview
+We've developed an experimental pipeline to enhance the resolution and detail of our Van Gogh style transfer outputs. This pipeline introduces additional processing steps to achieve higher quality results.
+
+## Key Features
+- Secondary KSampler for refined detail processing
+- Upscale Latent by node for resolution increase (1.5x input size)
+- Additional VAE Decoder for final image generation
+
+## Advantages
+- Higher resolution outputs
+- Improved detail preservation
+- Enhanced stylistic coherence at larger scales
+
+## Challenges
+- Increased processing time (can more than double)
+- Higher memory requirements
+
+## Technical Insight
+The pipeline operates in latent space, allowing for more coherent upscaling and detail enhancement. This approach offers superior quality for larger outputs but at the cost of increased computational demands.
+
+## Performance Considerations
+While the enhanced pipeline significantly improves output quality, users should be aware of the substantial increase in processing time. In some cases, execution time can more than double compared to the standard pipeline. This trade-off between quality and speed should be carefully evaluated based on specific project requirements and available resources.
+
+## Future Directions
+Ongoing work focuses on optimizing the pipeline to balance quality improvements with computational efficiency. We're exploring ways to mitigate the processing time increase while maintaining the enhanced output quality.
 # PyQt5 Desktop Application
 
 An experimental desktop application was developed using PyQt5 to provide a user-friendly interface for the ComfyUI workflow. The application’s primary goals include:
