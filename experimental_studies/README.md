@@ -1,4 +1,4 @@
-# Enhanced Resolution and Detail Workflow for Van Gogh Style Transfer
+# Enhanced Resolution and Detail Pipeline for Van Gogh Style Transfer
 
 ![ComfyUI_Workflow](experimentals_worflow.png)
 
