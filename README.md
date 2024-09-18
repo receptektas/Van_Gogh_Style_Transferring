@@ -106,7 +106,7 @@ The workflow consists of several key components:
 
 ## Custom Components
 
-This project incorporates a variety of custom components to enhance functionality and optimize the workflow. These components are categorized into Custom Nodes and Custom Modules, each serving specific purposes within the ComfyUI framework.
+This project incorporates a variety of custom components to enhance functionality and optimize the workflow. These components are categorized into Custom Nodes and Custom, each serving specific purposes within the ComfyUI framework.
 
 ### Custom Nodes
 
@@ -120,6 +120,8 @@ This project incorporates a variety of custom components to enhance functionalit
    - PerformanceMeasurementEndNode
    
    These custom nodes, developed specifically for this project, enable precise performance tracking and analysis. They are located in the custom_nodes directory and are essential for optimizing workflow efficiency. For detailed information on their functionality and implementation, please refer to the Performance Measurement section.
+
+   ![ComfyUI_Workflow](custom_nodes.jpg)
 
 ### Custom Modules
 

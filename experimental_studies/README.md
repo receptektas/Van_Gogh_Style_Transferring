@@ -1,6 +1,6 @@
 # Enhanced Resolution and Detail Pipeline for Van Gogh Style Transfer
 
-![ComfyUI_Workflow](experimentals_worflow.png)
+![ComfyUI_Workflow](experimental_workflow.png)
 
 ## Overview
 We've developed an experimental pipeline to enhance the resolution and detail of our Van Gogh style transfer outputs. This pipeline introduces additional processing steps to achieve higher quality results.
