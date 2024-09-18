@@ -1,6 +1,6 @@
 # ComfyUI Van Gogh Style Transfer Project
 
-![ComfyUI_Workflow](van_gogh_style_transferring_comfyui_worflow.png)
+![ComfyUI_Workflow](van_gogh_style_transferring_worflow.png)
 
 
 ## Table of Contents
@@ -235,6 +235,40 @@ This comprehensive analysis provides the necessary insights for iterative improv
 For further details on the implementation and usage of these custom nodes, including advanced configuration options and integration guidelines, refer to the `custom_nodes/performance_measurement.md` file in the project repository.
 
 ## Experimental Studies
+
+### Enhanced Resolution and Detail Pipeline
+A new experimental pipeline was implemented to improve output quality and resolution:
+
+- Utilizes a secondary KSampler and Upscale Latent by node
+- Produces output images 1.5 times larger than the input size
+- Aims to generate more detailed results through additional processing
+
+Key components:
+1. Additional KSampler for further refinement
+2. Upscale Latent by node for resolution increase
+3. Extra VAE Decoder for final image generation
+
+This pipeline processes images in latent space, allowing for more coherent upscaling and detail enhancement. While it increases processing time and memory usage, it offers a significant quality improvement, especially for larger output sizes.
+
+The experimental pipeline is particularly effective for:
+- Generating high-resolution Van Gogh style transfers
+- Preserving fine details while maintaining stylistic integrity
+- Exploring the balance between transformation fidelity and output resolution
+
+Advantages:
+- Higher resolution outputs
+- Improved detail preservation
+- Enhanced stylistic coherence at larger scales
+
+Disadvantages:
+- Significantly increased processing time (can be more than double)
+- Higher memory requirements
+- Potential for diminishing returns on very large upscales
+
+Performance Impact:
+The most notable drawback of this enhanced pipeline is the substantial increase in processing time. In some cases, the total execution time can more than double compared to the standard pipeline. This trade-off between quality and speed should be carefully considered based on the specific use case and available computational resources.
+
+Further experimentation and optimization of this pipeline are ongoing to maximize its potential within the project's computational constraints and to potentially mitigate the processing time increase.
 
 ### PyQt5 Desktop Application
 
